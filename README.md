@@ -198,7 +198,7 @@ We initialize our model.We use some parameter
 1st parameter: refers the text file
 2nd parameter: Size of the vector.Ex: They have size 150 which means our vector size is 150.To represent any word we need 150 size array.
 3rd parameter: size of the window
-They have a picture we see first window take 2 word and 2nd window take 2 word which actually defines window size .How many 
+They have a picture we see first window take 3 word and 2nd window take 4 word which actually defines window size.
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/pic.jpg)
 
 ```
@@ -213,5 +213,6 @@ model = gensim.models.Word2Vec(mm,size=150,window=10,min_count=2,workers=10)
 model.save("word2vec.model")
 
 ```
+
 
 
