@@ -13,4 +13,23 @@ In sentence tokenization ,we first separate our data in sentence.Actually our da
 Backgammon is one of the oldest known board games. Its history can be traced back nearly 5,000 years to archeological discoveries in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice.
 ```
 We separate those data in sentence.They have some boundary to separate in sentence.Suppose we find a '.'(full stop),'" "'(invaded coma) sign to separate the data to sentence 
-Here,we use @nltk(Natural Language Toolkit) python library. 
+Here,we use @nltk(Natural Language Toolkit) python library.This library automatically tokanize the sentence. 
+```
+import nltk
+text = "Backgammon is one of the oldest known board games. Its history can be traced back nearly 5,000 years to archeological discoveries in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice."
+sentences = nltk.sent_tokenize(text)
+for sentence in sentences:
+    print(sentence)
+```
+## Removing punctuation
+In sentence ,they have some unused punctuation.
+Example:Before removing unused punctuation
+```
+Backgammon is one of the oldest ''known board games. Its history can be', traced back nearly 5,000 years to ;;archeological discoveries"; in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice.
+```
+After removing punctuation
+```
+Backgammon Backgammon is one of the oldest known board games
+Its Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East
+It It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice
+```
