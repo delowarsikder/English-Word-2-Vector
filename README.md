@@ -204,10 +204,17 @@ We initialize our model.We use some parameter
 They have a picture we see first window take 3 word and 2nd window take 4 word which actually defines window size.
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/pic.jpg)
 
-```
+4th parameter: min_count means ninimium frequency count of words.
+5th parameter: workers means how many threads to use behind the scenes
 
 ```
 model = gensim.models.Word2Vec(mm,size=150,window=10,min_count=2,workers=10)
+```
+Then we save our model
+
+```
+model.save("word2vec.model")
+```
 ```
 
 from gensim.test.utils import common_texts, get_tmpfile
