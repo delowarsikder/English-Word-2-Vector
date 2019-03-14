@@ -62,7 +62,36 @@ for x in sentences:
 They have some word which actually do not affect our sentence meaning.
 Ex: Some stopwords in English
 ```
-
+{'a',
+ 'about',
+ 'above',
+ 'after',
+ 'again',
+ 'against',
+ 'ain',
+ 'all',
+ 'am',
+ 'an',
+ 'and',
+ 'any',
+ 'are',
+ 'aren',
+ "aren't",
+ 'as',
+ 'at',
+ 'be',
+ 'because',
+ 'been',
+ 'before',
+ 'being',
+ 'below',
+ 'between',
+ 'both',
+ 'but',
+ 'by',
+ 'can',
+ 'couldn',
+ "couldn't"}
 ```
 We remove those word from sentence.We use NLTK library which have stop word set.Using those set we can remove stop words.
 Before removing stopword
