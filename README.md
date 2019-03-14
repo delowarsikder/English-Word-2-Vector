@@ -208,7 +208,7 @@ They have a picture we see first window take 3 word and 2nd window take 4 word w
 5th parameter: workers means how many threads to use behind the scenes
 
 ```
-model = gensim.models.Word2Vec(mm,size=150,window=10,min_count=2,workers=10)
+model = Word2Vec(mm,size=10,window=10, min_count=1,workers=13)
 ```
 Then we save our model
 
@@ -217,16 +217,32 @@ model.save("word2vec.model")
 ```
 ```
 
-from gensim.test.utils import common_texts, get_tmpfile
 from gensim.models import Word2Vec
-import gensim
-
-path = get_tmpfile("word2vec.model")
-
-model = gensim.models.Word2Vec(mm,size=150,window=10,min_count=2,workers=10)
-model.save("word2vec.model")
+# train model
+model = Word2Vec(mm,size=10,window=10, min_count=1,workers=13)
+# summarize the loaded model
+print(model)
+# summarize vocabulary
+words = list(model.wv.vocab)
+print(words)
+# access vector for one word
+print(model['know'])
+# save model
+model.save('model.bin')
+# load model
+new_model = Word2Vec.load('model.bin')
+print(new_model)
 
 ```
+Now we check Word 2 vector Representation of any word.
+```
+vector = model.wv['know']
+```
 
+Find the similar word of 'know' word.
+```
+w1=['know']
+model.wv.most_similar(positive=w1)
+```
 
 
