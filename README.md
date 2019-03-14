@@ -21,6 +21,9 @@ sentences = nltk.sent_tokenize(text)
 for sentence in sentences:
     print(sentence)
 ```
+
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/tok2.jpg)
+
 ## Removing punctuation
 In sentence ,they have some unused punctuation.
 Example:Before removing unused punctuation
@@ -53,6 +56,8 @@ for x in sentences:
         
 
 ```
+
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/re.jpg)
 ## Removing Stopword
 They have some word which actually do not affect our sentence meaning.
 Ex: Some stopwords in English
@@ -108,6 +113,8 @@ for sentence in sentences2:
     m.append(without_stop_words)
 
 ```
+
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/stopwords.jpg)
 ## Lemmatization
 
 In this part ,we convert our word into base word. Suppose,we can write 'do' word in different form like does,done,doing.It is unefficient to write vector for every word.Because we have huge number of word. 
@@ -187,6 +194,8 @@ for x in m:
         m2.append(x3)
     mm.append(m2)
 ```
+
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/lem.jpg)
 ## Training 
 Here,we use genism library to use skim gram,CBOW algoritm.
 
@@ -202,10 +211,13 @@ We initialize our model.We use some parameter
 
 3rd parameter: size of the window
 They have a picture we see first window take 3 word and 2nd window take 4 word which actually defines window size.
+
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/pic.jpg)
 
 4th parameter: min_count means ninimium frequency count of words.
+
 5th parameter: workers means how many threads to use behind the scenes
+
 
 ```
 model = Word2Vec(mm,size=10,window=10, min_count=1,workers=13)
@@ -245,4 +257,4 @@ w1=['know']
 model.wv.most_similar(positive=w1)
 ```
 
-
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/training.jpg)
