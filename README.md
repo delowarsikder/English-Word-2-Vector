@@ -26,17 +26,14 @@ for sentence in sentences:
 
 ## Removing punctuation
 In sentence ,they have some unused punctuation.
+
 Example:Before removing unused punctuation
 ```
 Backgammon is one of the oldest ''known board games. Its history can be', traced back nearly 5,000 years to ;;archeological discoveries"; in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice.
 ```
 After removing punctuation
-```
-['Backgammon is one of the oldest known board games',
- 'Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East',
- 'It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice']
-```
 
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/re.jpg)
 ```
 from nltk.tokenize import RegexpTokenizer
 tt=""
@@ -57,7 +54,7 @@ for x in sentences:
 
 ```
 
-![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/re.jpg)
+
 ## Removing Stopword
 They have some word which actually do not affect our sentence meaning.
 Ex: Some stopwords in English
@@ -94,14 +91,14 @@ Ex: Some stopwords in English
  "couldn't"}
 ```
 We remove those word from sentence.We use NLTK library which have stop word set.Using those set we can remove stop words.
-Before removing stopword
+### Before removing stopword
 ```
 ['Backgammon is one of the oldest known board games',
  'Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East',
  'It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice']
 ```
 
-After removing stopword
+### After removing stopword
 ```
 [['Backgammon', 'one', 'oldest', 'known', 'board', 'games'],
  ['Its',
@@ -131,7 +128,7 @@ After removing stopword
   'two',
   'dice']]
 ```
-This is the code
+### This is the code
 ```
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words("english"))
@@ -150,14 +147,10 @@ In this part ,we convert our word into base word. Suppose,we can write 'do' word
 We use WordNetLemmatizer in NLTK library Which help you to move in base word.
 Before Lemmatization
 ```
-https://towardsdatascience.com/introduction-to-natural-language-processing-for-text-df845750fb63?fbclid=IwAR1L20jzZ_cELDxN6zxShg5N_zFReoO5OsFLjQ27qLwjobI7oLRPPiDVdEQ
-```
-After Lemmatization
-```
-[['Backgammon', 'one', 'oldest', 'know', 'board', 'game'],
+[['Backgammon', 'one', 'oldest', 'known', 'board', 'games'],
  ['Its',
   'history',
-  'trace',
+  'traced',
   'back',
   'nearly',
   '5',
@@ -173,17 +166,18 @@ After Lemmatization
   'game',
   'player',
   'fifteen',
-  'checker',
+  'checkers',
   'move',
   'twenty',
   'four',
-  'point',
-  'accord',
+  'points',
+  'according',
   'roll',
   'two',
   'dice']]
+  
 ```
-After lematization:
+After Lemmatization
 
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/lem.jpg)
 
@@ -252,7 +246,7 @@ new_model = Word2Vec.load('model.bin')
 print(new_model)
 
 ```
-Now we check Word 2 vector Representation of any word.
+Now we check word 2 vector representation of any word.
 ```
 vector = model.wv['know']
 ```
