@@ -13,7 +13,7 @@ In sentence tokenization ,we first separate our data in sentence.Actually our da
 Backgammon is one of the oldest known board games. Its history can be traced back nearly 5,000 years to archeological discoveries in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice.
 ```
 We separate those data in sentence.They have some boundary to separate in sentence.Suppose we find a '.'(full stop),'" "'(invaded coma) sign to separate the data to sentence 
-Here,we use @nltk(Natural Language Toolkit) python library.This library automatically tokanize the sentence. 
+Here,we use NLTK(Natural Language Toolkit) python library.This library automatically tokanize the sentence. 
 ```
 import nltk
 text = "Backgammon is one of the oldest known board games. Its history can be traced back nearly 5,000 years to archeological discoveries in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice."
@@ -32,9 +32,9 @@ Backgammon is one of the oldest ''known board games. Its history can be', traced
 ```
 After removing punctuation
 ```
-Backgammon Backgammon is one of the oldest known board games
-Its Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East
-It It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice
+['Backgammon is one of the oldest known board games',
+ 'Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East',
+ 'It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice']
 ```
 
 ```
@@ -96,9 +96,9 @@ Ex: Some stopwords in English
 We remove those word from sentence.We use NLTK library which have stop word set.Using those set we can remove stop words.
 Before removing stopword
 ```
-Backgammon Backgammon is one of the oldest known board games
-Its Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East
-It It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice
+['Backgammon is one of the oldest known board games',
+ 'Its history can be traced back nearly 5 000 years to archeological discoveries in the Middle East',
+ 'It is a two player game where each player has fifteen checkers which move between twenty four points according to the roll of two dice']
 ```
 
 After removing stopword
@@ -150,34 +150,7 @@ In this part ,we convert our word into base word. Suppose,we can write 'do' word
 We use WordNetLemmatizer in NLTK library Which help you to move in base word.
 Before Lemmatization
 ```
-[['Backgammon', 'one', 'oldest', 'known', 'board', 'games'],
- ['Its',
-  'history',
-  'traced',
-  'back',
-  'nearly',
-  '5',
-  '000',
-  'years',
-  'archeological',
-  'discoveries',
-  'Middle',
-  'East'],
- ['It',
-  'two',
-  'player',
-  'game',
-  'player',
-  'fifteen',
-  'checkers',
-  'move',
-  'twenty',
-  'four',
-  'points',
-  'according',
-  'roll',
-  'two',
-  'dice']]
+https://towardsdatascience.com/introduction-to-natural-language-processing-for-text-df845750fb63?fbclid=IwAR1L20jzZ_cELDxN6zxShg5N_zFReoO5OsFLjQ27qLwjobI7oLRPPiDVdEQ
 ```
 After Lemmatization
 ```
@@ -210,6 +183,10 @@ After Lemmatization
   'two',
   'dice']]
 ```
+After lematization:
+
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/lem.jpg)
+
 This is the code
 ```
 from nltk.stem import PorterStemmer, WordNetLemmatizer
@@ -224,7 +201,7 @@ for x in m:
     mm.append(m2)
 ```
 
-![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/lem.jpg)
+
 ## Training 
 Here,we use genism library to use skim gram,CBOW algoritm.
 
@@ -299,6 +276,8 @@ https://machinelearningmastery.com/develop-word-embeddings-python-gensim/
 https://www.kaggle.com/shahidul034
 
 https://towardsdatascience.com/word-to-vectors-natural-language-processing-b253dd0b0817
+
+https://towardsdatascience.com/introduction-to-natural-language-processing-for-text-df845750fb63?fbclid=IwAR1L20jzZ_cELDxN6zxShg5N_zFReoO5OsFLjQ27qLwjobI7oLRPPiDVdEQ
 
 
 
