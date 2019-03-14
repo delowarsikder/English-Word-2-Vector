@@ -8,12 +8,14 @@ We try to build English word to vector.We follow this pipeline for this
 6. Training
 
 ## Sentence tokenization
-In sentence tokenization ,we first separate our data in sentence.Actually our data exist this form
+In sentence tokenization ,we first separate our data in sentence.Actually our data exist this form.
 ```
 Backgammon is one of the oldest known board games. Its history can be traced back nearly 5,000 years to archeological discoveries in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice.
 ```
-We separate those data in sentence.They have some boundary to separate in sentence.Suppose we find a '.'(full stop),'" "'(invaded coma) sign to separate the data to sentence 
+We separate those data in sentence.They have some boundary condition to separate in sentence.Suppose we find a '.'(full stop),'" "'(invaded coma) sign to separate the data to sentence.
+
 Here,we use NLTK(Natural Language Toolkit) python library.This library automatically tokanize the sentence. 
+
 ```
 import nltk
 text = "Backgammon is one of the oldest known board games. Its history can be traced back nearly 5,000 years to archeological discoveries in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice."
@@ -21,7 +23,7 @@ sentences = nltk.sent_tokenize(text)
 for sentence in sentences:
     print(sentence)
 ```
-
+### After Sentence tokenization
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/tok2.jpg)
 
 ## Removing punctuation
@@ -31,9 +33,12 @@ Example:Before removing unused punctuation
 ```
 Backgammon is one of the oldest ''known board games. Its history can be', traced back nearly 5,000 years to ;;archeological discoveries"; in the Middle East. It is a two player game where each player has fifteen checkers which move between twenty-four points according to the roll of two dice.
 ```
-After removing punctuation
+### After removing punctuation
 
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/re.jpg)
+
+We use this code to remove the punctuation
+
 ```
 from nltk.tokenize import RegexpTokenizer
 tt=""
@@ -54,9 +59,9 @@ for x in sentences:
 
 ```
 
-
 ## Removing Stopword
 They have some word which actually do not affect our sentence meaning.
+
 Ex: Some stopwords in English
 ```
 {'a',
@@ -91,6 +96,7 @@ Ex: Some stopwords in English
  "couldn't"}
 ```
 We remove those word from sentence.We use NLTK library which have stop word set.Using those set we can remove stop words.
+
 ### Before removing stopword
 ```
 ['Backgammon is one of the oldest known board games',
@@ -99,35 +105,9 @@ We remove those word from sentence.We use NLTK library which have stop word set.
 ```
 
 ### After removing stopword
-```
-[['Backgammon', 'one', 'oldest', 'known', 'board', 'games'],
- ['Its',
-  'history',
-  'traced',
-  'back',
-  'nearly',
-  '5',
-  '000',
-  'years',
-  'archeological',
-  'discoveries',
-  'Middle',
-  'East'],['It',
-  'two',
-  'player',
-  'game',
-  'player',
-  'fifteen',
-  'checkers',
-  'move',
-  'twenty',
-  'four',
-  'points',
-  'according',
-  'roll',
-  'two',
-  'dice']]
-```
+
+![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/stopwords.jpg)
+
 ### This is the code
 ```
 from nltk.corpus import stopwords
@@ -140,12 +120,12 @@ for sentence in sentences2:
 
 ```
 
-![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/stopwords.jpg)
+
 ## Lemmatization
 
 In this part ,we convert our word into base word. Suppose,we can write 'do' word in different form like does,done,doing.It is unefficient to write vector for every word.Because we have huge number of word. 
 We use WordNetLemmatizer in NLTK library Which help you to move in base word.
-Before Lemmatization
+### Before Lemmatization
 ```
 [['Backgammon', 'one', 'oldest', 'known', 'board', 'games'],
  ['Its',
@@ -177,7 +157,7 @@ Before Lemmatization
   'dice']]
   
 ```
-After Lemmatization
+### After Lemmatization
 
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/lem.jpg)
 
@@ -261,7 +241,7 @@ model.wv.most_similar(positive=w1)
 
 You can see whole code in this link
 
-https://www.kaggle.com/shahidul034/english-word2vec
+### https://www.kaggle.com/shahidul034/english-word2vec
 ## Reference:
 http://kavita-ganesan.com/gensim-word2vec-tutorial-starter-code/#.XIpNgygzZEZ
 
