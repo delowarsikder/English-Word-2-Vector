@@ -287,3 +287,19 @@ model.wv.most_similar(positive=w1)
 ```
 
 ![alt text](https://github.com/shahidul034/English-Word-2-Vector/blob/master/Pic/training.jpg)
+
+You can see whole code in this link
+
+https://www.kaggle.com/shahidul034/english-word2vec
+## Reference:
+http://kavita-ganesan.com/gensim-word2vec-tutorial-starter-code/#.XIpNgygzZEZ
+
+https://machinelearningmastery.com/develop-word-embeddings-python-gensim/
+
+https://www.kaggle.com/shahidul034
+
+https://towardsdatascience.com/word-to-vectors-natural-language-processing-b253dd0b0817
+
+
+
+
