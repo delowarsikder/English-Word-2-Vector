@@ -123,8 +123,8 @@ for sentence in sentences2:
 
 ## Lemmatization
 
-In this part ,we convert our word into base word. Suppose,we can write 'do' word in different form like does,done,doing.It is unefficient to write vector for every word.Because we have huge number of word. 
-We use WordNetLemmatizer in NLTK library Which help you to move in base word.
+In this part ,we convert our word into base word. Suppose,we can write 'do' word in different form like does,done,doing.It is inefficient to write vector for every word.Because we have huge number of word.suppose we have 3 million word,it is difficult for us to map 3 million word as a vector. 
+We use WordNetLemmatizer in NLTK library which help you to convert any word in base word.
 ### Before Lemmatization
 ```
 [['Backgammon', 'one', 'oldest', 'known', 'board', 'games'],
