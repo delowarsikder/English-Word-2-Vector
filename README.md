@@ -1,4 +1,12 @@
 # English-Word-2-Vector
+
+We know about mathematical vector.Vector actually stores array of number.Every image have a pixel.We can represent those pixel as a vector.
+Same as we find way to represent word into vector.What happens when we represent word to vector. We know in machine learning works with actually numerical value Which is actually vector.If we convert word into vector we can easily train our  million of data(numeriacl data) within few minutes or few hours(it depends on computer capability) 
+
+How can we build simple, scalable, fast to train models which can run over billions of words that will produce exceedingly good word representations? Let’s look into Word2Vec model to find answer to this.
+
+Word2Vec is a group of models which helps derive relations between a word and its contextual words.
+
 We try to build English word to vector.We follow this pipeline for this
 1. Collect data
 2. Sentence tokenization
