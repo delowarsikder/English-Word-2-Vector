@@ -14,6 +14,7 @@ We try to build English word to vector.We follow this pipeline for this
 1. Collect data
 2. Sentence tokenization
 3. Removing punctuation
+
 4.Detect common phrases
 5. Removing Stopword
 6. Lemmatization
