@@ -11,14 +11,13 @@ https://towardsdatascience.com/word-to-vectors-natural-language-processing-b253d
 
 
 We try to build English word to vector.We follow this pipeline for this
-1. Collect data
-2. Sentence tokenization
-3. Removing punctuation
-
-4.Detect common phrases
-5. Removing Stopword
-6. Lemmatization
-7. Training
+* Collect data
+* Sentence tokenization
+* Removing punctuation
+* Detect common phrases
+* Removing Stopword
+* Lemmatization
+* Training
 
 ## Sentence tokenization
 In sentence tokenization ,we first separate our data in sentence.Actually our data exist this form.
